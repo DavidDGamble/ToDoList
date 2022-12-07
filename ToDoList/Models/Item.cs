@@ -7,18 +7,23 @@ namespace ToDoList.Models
 
         public static List<Item> GetAll()
         {
-            return _instances;
+          return _instances;
         }
 
         public Item(string description) //constructor with string agrument
         {
-            Description = description;
-            _instances.Add(this); //this refers to the object being actively created
+          Description = description;
+          _instances.Add(this); //this refers to the object being actively created
+        }
+
+        public static void Remove(int input)
+        {
+          _instances.RemoveAt(input);
         }
 
         public static void ClearAll() //resets data (helps to clear data between each test)
         {
-            _instances.Clear();
+          _instances.Clear();
         }
     }
 }
